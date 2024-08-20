@@ -38,12 +38,12 @@ public class RegistroServlet extends HttpServlet {
 		Fachada fachada = new Fachada();
 		try {
 			usuario = fachada.registrarUsuario(usuario);
-			request.getSession().setAttribute(nombreUsuario, nombreUsuario);
-			
+			request.getSession().setAttribute("usuario", usuario);
+			request.getRequestDispatcher("principal.jsp").forward(request, response);
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
-			request.setAttribute("error", "error al registrar");
+			request.setAttribute("error", "Error al registrar");
 			request.getRequestDispatcher("Registro.jsp");
 			
 		}

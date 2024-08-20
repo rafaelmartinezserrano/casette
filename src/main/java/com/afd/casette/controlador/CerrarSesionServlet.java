@@ -20,7 +20,7 @@ public class CerrarSesionServlet extends HttpServlet {
 		//Destruyo la sesión con el método invalidate 
 		request.getSession().invalidate();
 		//Voy a index.jsp
-		response.sendRedirect("principal.jsp");
+		response.sendRedirect("index.jsp");
 	}
 
 }
