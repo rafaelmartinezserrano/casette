@@ -24,6 +24,7 @@
     <servlet-name>CerrarSesionServlet</servlet-name>
     <url-pattern>/CerrarSesion</url-pattern>
   </servlet-mapping>
+  
     <servlet>
     <description></description>
     <display-name>RegistroServlet</display-name>
@@ -33,5 +34,16 @@
   <servlet-mapping>
     <servlet-name>RegistroServlet</servlet-name>
     <url-pattern>/Registro</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>IniciarSesionServlet</display-name>
+    <servlet-name>IniciarSesionServlet</servlet-name>
+    <servlet-class>com.afd.cassete.controlador.IniciarSesionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>IniciarSesionServlet</servlet-name>
+    <url-pattern>/IniciarSesion</url-pattern>
   </servlet-mapping>
 </web-app>
