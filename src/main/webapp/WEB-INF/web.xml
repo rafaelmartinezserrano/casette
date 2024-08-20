@@ -24,4 +24,14 @@
     <servlet-name>CerrarSesionServlet</servlet-name>
     <url-pattern>/CerrarSesion</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <description></description>
+    <display-name>RegistroServlet</display-name>
+    <servlet-name>RegistroServlet</servlet-name>
+    <servlet-class>com.afd.cassete.controlador.RegistroServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistroServlet</servlet-name>
+    <url-pattern>/Registro</url-pattern>
+  </servlet-mapping>
 </web-app>
