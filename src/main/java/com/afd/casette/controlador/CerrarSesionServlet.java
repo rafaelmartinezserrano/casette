@@ -1,4 +1,4 @@
-package com.afd.casette.modelo.controlador;
+package com.afd.casette.controlador;
 
 import java.io.IOException;
 
