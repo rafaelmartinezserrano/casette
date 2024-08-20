@@ -23,7 +23,7 @@ public class IniciarSesionServlet extends HttpServlet {
 		String recordarUsuario = request.getParameter("recordarUsuario");
 		System.out.println("IniciarSesion -> recordarUsuario: " + recordarUsuario);
 		Fachada fachada = new Fachada();
-		
+		System.out.println("IniciarSesion -> NombreUsuario: " + nombreUsuario + " clave: " + clave);
 		try {
 			Usuario usuario = fachada.iniciarSesion(nombreUsuario, clave);
 			
@@ -34,7 +34,13 @@ public class IniciarSesionServlet extends HttpServlet {
 					response.addCookie(galleta);
 					
 				}
+				request.getSession().setAttribute("usuario", usuario);
+				request.getRequestDispatcher("principal.jsp").forward(request, response);
+			} else {
+				request.setAttribute("errorLogin", "El nombre de usuario o la clave son incorrectos");
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

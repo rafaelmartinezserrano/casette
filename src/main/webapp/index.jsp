@@ -6,12 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <link type="text/css" rel="stylesheet" href="iniciarSesion.css"/>
-<title>Cassette</title>
+<title>Casette</title>
 </head>
 <body>
 
 <header class="cabecera">
-	<h1> Cassette</h1>
+	<h1> Casette</h1>
 </header>
 	
 	
@@ -41,9 +41,6 @@
 	</form>
 	<div id="eresNuevo">  Eres nuevo ?<a href = "Registro.jsp"> Regístrate aquí </a> </div>
 	</section>
-
-</body>
-</html>
 
 </body>
 </html>

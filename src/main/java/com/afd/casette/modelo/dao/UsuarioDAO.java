@@ -64,7 +64,7 @@ public class UsuarioDAO {
 		
 		if(resultado.next()) {
 			int idUsuario = resultado.getInt("idUsuario");
-			String clave = resultado.getString("nombreUsuario");
+			String clave = resultado.getString("clave");
 			String email = resultado.getString("email");
 			LocalDate fechaNacimiento = resultado.getDate("fechaNacimiento").toLocalDate();
 			boolean deBaja = resultado.getBoolean("deBaja");

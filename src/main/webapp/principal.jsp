@@ -15,7 +15,7 @@
 <div>
 
 
-<a href="CerrarSesion"></a>
+<a href="CerrarSesion">Cerrar Sesión</a>
 
 </div>
 

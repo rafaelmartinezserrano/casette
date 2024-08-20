@@ -18,7 +18,7 @@
     <description></description>
     <display-name>CerrarSesionServlet</display-name>
     <servlet-name>CerrarSesionServlet</servlet-name>
-    <servlet-class>com.afd.casette.modelo.controlador.CerrarSesionServlet</servlet-class>
+    <servlet-class>com.afd.casette.controlador.CerrarSesionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CerrarSesionServlet</servlet-name>
@@ -29,7 +29,7 @@
     <description></description>
     <display-name>RegistroServlet</display-name>
     <servlet-name>RegistroServlet</servlet-name>
-    <servlet-class>com.afd.cassete.controlador.RegistroServlet</servlet-class>
+    <servlet-class>com.afd.casette.controlador.RegistroServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RegistroServlet</servlet-name>
@@ -40,7 +40,7 @@
     <description></description>
     <display-name>IniciarSesionServlet</display-name>
     <servlet-name>IniciarSesionServlet</servlet-name>
-    <servlet-class>com.afd.cassete.controlador.IniciarSesionServlet</servlet-class>
+    <servlet-class>com.afd.casette.controlador.IniciarSesionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>IniciarSesionServlet</servlet-name>
