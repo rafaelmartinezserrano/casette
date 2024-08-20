@@ -2,4 +2,5 @@
 .project
 build/
 .settings/
+target/
 
