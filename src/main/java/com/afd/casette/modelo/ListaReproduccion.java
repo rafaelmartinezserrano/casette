@@ -1,5 +1,6 @@
 package com.afd.casette.modelo;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -77,5 +78,8 @@ public class ListaReproduccion {
 		this.canciones.remove(cancion);
 	}
 	
+	public void reordenarAleatorio() {
+		Collections.shuffle(this.canciones);
+	}
 	
 }

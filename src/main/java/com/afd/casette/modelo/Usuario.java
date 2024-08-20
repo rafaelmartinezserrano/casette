@@ -31,6 +31,7 @@ public class Usuario {
 		this.clave = clave;
 		this.email = email;
 		this.fechaNacimiento = fechaNacimiento;
+		this.deBaja = false;
 	}
 
 	public int getIdUsuario() {
