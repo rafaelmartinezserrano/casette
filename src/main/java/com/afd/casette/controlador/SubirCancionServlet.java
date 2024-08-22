@@ -1,18 +1,20 @@
 package com.afd.casette.controlador;
 
+import java.io.File;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalTime;
+
+import com.afd.casette.modelo.Cancion;
+import com.afd.casette.modelo.TipoArchivo;
+import com.afd.casette.modelo.Usuario;
+import com.afd.casette.modelo.fachada.Fachada;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
-
-import java.io.File;
-import java.io.IOException;
-import java.time.LocalTime;
-
-import com.afd.casette.modelo.TipoArchivo;
-import com.afd.casette.modelo.Usuario;
 
 /**
  * Servlet implementation class SubirCancionServlet
@@ -36,31 +38,38 @@ public class SubirCancionServlet extends HttpServlet {
 		TipoArchivo tipoArchivo = TipoArchivo.valueOf(strTipoArchivo);
 		
 		String rutaAplicacion = request.getServletContext().getRealPath("");
-		String rutaCarpeta = rutaAplicacion + "FICHEROS";
+		File ruta = new File(rutaAplicacion);
+		String rutaCarpeta = ruta.getParent() + File.separator + "ROOT" + File.separator + "FICHEROS";
 		Usuario usuario = (Usuario)request.getSession().getAttribute("usuario");
 		String rutaUsuario = rutaCarpeta + File.separator + usuario.getIdUsuario();
 		String rutaPortada= rutaUsuario + File.separator + "PORTADAS" + File.separator;
-		File carpetaPortada = new File(rutaPortada);
-		if (!carpetaPortada.exists()) {
-			carpetaPortada.mkdirs();
-		}
-		String rutaMusica = rutaUsuario + File.separator + "MUSICA" + File.separator;
-		File carpetaMusica = new File(rutaMusica);
-		if (!carpetaMusica.exists()) {
-			carpetaMusica.mkdirs();
-		}
-		
 		Part ficheroPortada = request.getPart("portada");
 		String nombrePortada = extraerNombreFichero(ficheroPortada);
-		System.out.println("SubirCancionServlet -> FicheroPortada: " + nombrePortada);
+		subirFichero(ficheroPortada, rutaPortada + nombrePortada);
 		
-		ficheroPortada.write(rutaPortada + nombrePortada);
-		
+		String rutaMusica = rutaUsuario + File.separator + "MUSICA" + File.separator;
 		Part ficheroMusica = request.getPart("archivo");
 		String nombreMusica = extraerNombreFichero(ficheroMusica);
-		System.out.println("SubirCancionServlet -> FicheroMusica: " + nombreMusica);
+		subirFichero(ficheroMusica, rutaMusica + nombreMusica);
 		
-		ficheroMusica.write(rutaMusica + nombreMusica);
+		Cancion cancion = new Cancion(0, usuario, titulo, autor, genero, duracion, nombrePortada, anho, nombreMusica, privada, tipoArchivo);
+		Fachada fachada = new Fachada();
+		try {
+			fachada.guardarCancion(cancion);
+			request.getRequestDispatcher("principal.jsp").forward(request, response);
+		} catch (SQLException e) {
+			e.printStackTrace();
+			request.setAttribute("error", "Error al subir la canción");
+			request.getRequestDispatcher("subirCancion.jsp").forward(request, response);
+		}
+	}
+	
+	private void subirFichero(Part parte, String ruta) throws IOException {
+		File carpeta = new File(ruta);
+		if (!carpeta.exists()) {
+			carpeta.mkdirs();
+		}
+		parte.write(ruta);
 	}
 
 	private String extraerNombreFichero(Part parte) {

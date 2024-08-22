@@ -2,7 +2,9 @@ package com.afd.casette.modelo.fachada;
 
 import java.sql.SQLException;
 
+import com.afd.casette.modelo.Cancion;
 import com.afd.casette.modelo.Usuario;
+import com.afd.casette.modelo.dao.CancionDAO;
 import com.afd.casette.modelo.dao.UsuarioDAO;
 
 public class Fachada {
@@ -23,6 +25,12 @@ public class Fachada {
 		} else {
 			return null;
 		}
+	}
+
+	public void guardarCancion(Cancion cancion) throws SQLException {
+		CancionDAO dao = new CancionDAO();
+		dao.insertarCancion(cancion);
+		
 	}
 	
 }
