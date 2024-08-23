@@ -17,7 +17,7 @@
 
 <a href="CerrarSesion">Cerrar Sesión</a>
 <a href="subirCancion.jsp">Subir Canción</a>
-
+<a href="cambiarClave.jsp">Cambiar contraseña</a>
 
 </div>
 

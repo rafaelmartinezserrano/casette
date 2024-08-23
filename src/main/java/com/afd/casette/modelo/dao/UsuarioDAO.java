@@ -20,8 +20,8 @@ public class UsuarioDAO {
 	private DataSource ds;
 	
 	private final static String INSERTAR_USUARIO = "INSERT INTO usuario (nombreUsuario,clave,email,fechaNacimiento) VALUES (?,?,?,?)";
-	
 	private final static String BUSCAR_USUARIO_POR_NOMBRE = "SELECT * FROM usuario WHERE nombreUsuario = ?";
+	private final static String ACTUALIZAR_CLAVE_USUARIO = "UPDATE usuario SET clave = ? WHERE nombreUsuario = ?";
 	
 	public UsuarioDAO() {
 		try {
@@ -68,11 +68,21 @@ public class UsuarioDAO {
 			String email = resultado.getString("email");
 			LocalDate fechaNacimiento = resultado.getDate("fechaNacimiento").toLocalDate();
 			boolean deBaja = resultado.getBoolean("deBaja");
-			
 			usuario = new Usuario(idUsuario, nombreUsuario, clave, email, fechaNacimiento, deBaja);
 		}
 		
 		conexion.close();
 		return usuario;
+	}
+
+	public boolean modificarClave(Usuario usuario, String claveNueva) throws SQLException {
+		Connection conexion = this.ds.getConnection();
+		PreparedStatement sentencia = conexion.prepareStatement(ACTUALIZAR_CLAVE_USUARIO);
+		sentencia.setString(1, claveNueva);
+		sentencia.setString(2, usuario.getNombreUsuario());
+		int numFilas = sentencia.executeUpdate();
+		
+		conexion.close();
+		return numFilas == 1;
 	}
 }

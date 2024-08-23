@@ -32,5 +32,17 @@ public class Fachada {
 		dao.insertarCancion(cancion);
 		
 	}
+
+	public boolean cambiarClave(Usuario usuario, String claveNueva, String claveActual) throws SQLException{
+		UsuarioDAO dao = new UsuarioDAO();
+		Usuario usuarioBuscado = dao.buscarUsuarioPorNombre(usuario.getNombreUsuario());
+		boolean claveCambiada = false;
+		if(usuarioBuscado != null) {
+			if(usuarioBuscado.getClave().equals(claveActual)) {
+				claveCambiada = dao.modificarClave(usuario, claveNueva);
+			}
+		}
+		return claveCambiada;
+	}
 	
 }

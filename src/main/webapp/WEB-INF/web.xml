@@ -9,13 +9,11 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <resource-ref>
     <res-ref-name>jdbc/CasetteDS</res-ref-name>
     <res-type>javax.sql.DataSource</res-type>
     <res-auth>Container</res-auth>
   </resource-ref>
-  
   <servlet>
     <description></description>
     <display-name>CerrarSesionServlet</display-name>
@@ -26,7 +24,6 @@
     <servlet-name>CerrarSesionServlet</servlet-name>
     <url-pattern>/CerrarSesion</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>RegistroServlet</display-name>
@@ -37,7 +34,6 @@
     <servlet-name>RegistroServlet</servlet-name>
     <url-pattern>/Registro</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>IniciarSesionServlet</display-name>
@@ -48,19 +44,28 @@
     <servlet-name>IniciarSesionServlet</servlet-name>
     <url-pattern>/IniciarSesion</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>SubirCancionServlet</display-name>
     <servlet-name>SubirCancionServlet</servlet-name>
     <servlet-class>com.afd.casette.controlador.SubirCancionServlet</servlet-class>
     <multipart-config>
-    	<max-file-size>52428800</max-file-size>
-    	<max-request-size>78643200</max-request-size>
+      <max-file-size>52428800</max-file-size>
+      <max-request-size>78643200</max-request-size>
     </multipart-config>
   </servlet>
   <servlet-mapping>
     <servlet-name>SubirCancionServlet</servlet-name>
     <url-pattern>/SubirCancion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CambiarClaveServlet</display-name>
+    <servlet-name>CambiarClaveServlet</servlet-name>
+    <servlet-class>com.afd.casette.controlador.CambiarClaveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CambiarClaveServlet</servlet-name>
+    <url-pattern>/CambiarClave</url-pattern>
   </servlet-mapping>
 </web-app>
