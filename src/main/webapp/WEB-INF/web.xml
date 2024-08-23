@@ -82,4 +82,14 @@
 		<servlet-name>AgregarCancionListaServlet</servlet-name>
 		<url-pattern>/AgregarCancionLista</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>CargarListaServlet</display-name>
+		<servlet-name>CargarListaServlet</servlet-name>
+		<servlet-class>com.afd.casette.controlador.CargarListaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CargarListaServlet</servlet-name>
+		<url-pattern>/CargarLista</url-pattern>
+	</servlet-mapping>
 </web-app>

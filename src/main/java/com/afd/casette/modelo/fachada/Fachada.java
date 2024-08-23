@@ -3,6 +3,7 @@ package com.afd.casette.modelo.fachada;
 import java.sql.SQLException;
 
 import com.afd.casette.modelo.Cancion;
+import com.afd.casette.modelo.ListaReproduccion;
 import com.afd.casette.modelo.Usuario;
 import com.afd.casette.modelo.dao.CancionDAO;
 import com.afd.casette.modelo.dao.CancionListaDAO;
@@ -56,6 +57,11 @@ public class Fachada {
 		 }
 		 
 	 }
+
+	public ListaReproduccion buscarListaPorId(int idLista, Usuario usuario) throws SQLException {
+		CancionListaDAO dao = new CancionListaDAO();
+		return dao.buscarListaPorId(idLista, usuario);
+	}
 	
 	
 }
