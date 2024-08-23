@@ -1,15 +1,126 @@
-#seccionLogin {
-	display: grid;
-	font-size: 14pt;
-	text-align: center;
-	border:solid 4px green
-	}
-	
-	.cabecera {
-	font-size: 40px;
-	background-color: green;
-	font-family: cursive;
-	text-align: center;
-	display:grid;
-	
-	}
+
+
+body {
+	background-color: black;
+	color:white;
+	 font-family: "Dosis", sans-serif;
+	font-optical-sizing: auto;
+  	font-weight:400;
+  	font-style: normal;
+}
+
+header h1, header h3 {
+	position:relative;
+	color:white;
+	text-align:center;
+	width:100%;
+	 font-family: "Kanit", sans-serif;
+	 margin-top:2em;
+}
+
+header h1 {
+	font-size:3em;
+	font-weight: 800;
+}
+
+header h3 {
+	font-size:2em;
+	font-weight: 400;
+}
+
+.cabecera {
+	display:flex;
+	flex-wrap:wrap;
+	margin-top:200px;
+}
+
+#casette {
+	fill:rgb(0, 136, 173) !important;
+	max-height:100%;
+	position:absolute;
+	margin:auto;
+	height:50%;
+	left:30%;
+	z-index:-1;
+	animation-name: ckw;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes ckw {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#botonAbrir{
+	cursor:pointer;
+	font-size: 36px;
+}
+
+.navFull{
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	right: 0;
+	background-color:rgb(1, 141, 184);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	text-align:center;
+}
+
+.navFull .botonCerrar {
+	position: absolute;
+	top: 0;
+	left: 25px;
+	font-size: 36px;
+	cursor:pointer;
+	color:white;
+	text-decoration: none;
+	margin: 10px 0;
+}
+
+#inicioSesion {
+	border:1px solid white;
+	border-radius: 5px;
+	margin: auto 2em;
+	padding:2em;
+	text-align:justify;
+	width:50%;
+	font-size:1.5em;
+
+}
+
+input[type="text"], input[type="password"] {
+	height:35px;
+	width:100%;
+	font-family: "Dosis", sans-serif;
+  	font-weight:400;
+ 	font-style: normal;
+	font-size:1em;
+	border:1px solid white;
+	border-radius: 5px;
+}
+
+input[type="submit"]{
+	height:35px;
+	border:1px solid white;
+	border-radius: 5px;
+	background-color:rgb(1, 141, 184);
+	color:white;
+	font-family: "Dosis", sans-serif;
+  	font-weight:400;
+ 	font-style: normal;
+	font-size:1em;
+}
+
+input {
+	margin:10px auto;
+}
