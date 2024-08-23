@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+import javax.crypto.spec.DHPublicKeySpec;
+
 import com.afd.casette.modelo.Usuario;
 import com.afd.casette.modelo.fachada.Fachada;
 
@@ -48,5 +50,5 @@ public class RegistroServlet extends HttpServlet {
 			
 		}
 	}
-
+	
 }

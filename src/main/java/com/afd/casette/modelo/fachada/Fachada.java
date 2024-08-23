@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import com.afd.casette.modelo.Cancion;
 import com.afd.casette.modelo.Usuario;
 import com.afd.casette.modelo.dao.CancionDAO;
+import com.afd.casette.modelo.dao.CancionListaDAO;
 import com.afd.casette.modelo.dao.UsuarioDAO;
 
 public class Fachada {
@@ -44,5 +45,17 @@ public class Fachada {
 		}
 		return claveCambiada;
 	}
+	
+	 public void agregarCancionLista(int idCancion,int idLista) throws SQLException {
+		 CancionListaDAO dao = new CancionListaDAO();
+		 int pos = dao.sumarPocision(idLista);
+		 
+		 if (pos != 0){
+			 pos++;
+			 dao.agregarCancionLista(pos,idCancion,idLista);
+		 }
+		 
+	 }
+	
 	
 }
