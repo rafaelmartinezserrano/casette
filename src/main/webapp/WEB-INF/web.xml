@@ -92,4 +92,14 @@
 		<servlet-name>CargarListaServlet</servlet-name>
 		<url-pattern>/CargarLista</url-pattern>
 	</servlet-mapping>
+	  <servlet>
+    <description></description>
+    <display-name>DarDeBajaServlet</display-name>
+    <servlet-name>DarDeBajaServlet</servlet-name>
+    <servlet-class>com.afd.casette.controlador.DarDeBajaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DarDeBajaServlet</servlet-name>
+    <url-pattern>/DarDeBaja</url-pattern>
+  </servlet-mapping>
 </web-app>

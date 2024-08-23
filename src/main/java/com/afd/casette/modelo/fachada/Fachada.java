@@ -63,5 +63,17 @@ public class Fachada {
 		return dao.buscarListaPorId(idLista, usuario);
 	}
 	
+	 public boolean baja(Usuario usuario,String clave) throws SQLException {
+		 UsuarioDAO dao = new UsuarioDAO();
+		 Usuario buscarUsuario = dao.buscarUsuarioPorNombre(usuario.getNombreUsuario());
+		 boolean dadoDeBaja= false;
+		 if (buscarUsuario != null) {
+			if (buscarUsuario.getClave().equals(clave)) {
+				dadoDeBaja = dao.modificarBaja(usuario.getIdUsuario());
+	
+			}
+		}
+		return dadoDeBaja;
+	 }
 	
 }

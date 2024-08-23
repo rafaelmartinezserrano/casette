@@ -22,6 +22,9 @@ public class UsuarioDAO {
 	private final static String INSERTAR_USUARIO = "INSERT INTO usuario (nombreUsuario,clave,email,fechaNacimiento) VALUES (?,?,?,?)";
 	private final static String BUSCAR_USUARIO_POR_NOMBRE = "SELECT * FROM usuario WHERE nombreUsuario = ?";
 	private final static String ACTUALIZAR_CLAVE_USUARIO = "UPDATE usuario SET clave = ? WHERE nombreUsuario = ?";
+	private final static String DAR_DE_BAJA = "UPDATE usuario SET deBaja = true WHERE idUsuario = ?";
+	
+	
 	
 	public UsuarioDAO() {
 		try {
@@ -85,4 +88,15 @@ public class UsuarioDAO {
 		conexion.close();
 		return numFilas == 1;
 	}
+	
+	public boolean modificarBaja(int idUsuario) throws SQLException {
+		Connection conexion = this.ds.getConnection();
+		PreparedStatement sentencia = conexion.prepareStatement(DAR_DE_BAJA); 
+		sentencia.setInt(1, idUsuario);
+		int  numFilas = sentencia.executeUpdate();
+		
+		conexion.close();
+		return numFilas ==1;
+	}
+	
 }

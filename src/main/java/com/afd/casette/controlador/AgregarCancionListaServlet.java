@@ -32,7 +32,6 @@ public class AgregarCancionListaServlet extends HttpServlet {
 			request.setAttribute("error", "Error al Incertar cancion en la lista");
 		}
 		
-		
 	}
 
 }
