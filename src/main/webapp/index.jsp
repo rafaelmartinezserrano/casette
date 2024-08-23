@@ -11,7 +11,7 @@
 <body>
 
 <header class="cabecera">
-	<h1> Casette</h1>
+	<h1>Casette</h1>
 </header>
 
 	
