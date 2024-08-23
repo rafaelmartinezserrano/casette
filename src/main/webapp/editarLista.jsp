@@ -23,4 +23,4 @@
 		<% } %>
 		<script type="text/javascript" src="scripts/editarLista.js"></script>
 	</body>
-</html>
+</html>	
