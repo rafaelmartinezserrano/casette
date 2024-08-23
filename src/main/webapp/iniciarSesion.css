@@ -1,7 +1,5 @@
-
-
 body {
-	background-color: black;
+	background-color:black;
 	color:white;
 	 font-family: "Dosis", sans-serif;
 	font-optical-sizing: auto;
@@ -31,21 +29,23 @@ header h3 {
 .cabecera {
 	display:flex;
 	flex-wrap:wrap;
-	margin-top:200px;
+	overflow:hidden;
+	transform:translateZ(0);
+	padding:105px;
 }
 
 #casette {
-	fill:rgb(0, 136, 173) !important;
+	fill:rgba(0, 135, 173, 0.496) !important;
 	max-height:100%;
 	position:absolute;
 	margin:auto;
-	height:50%;
-	left:30%;
+	left:41%;
 	z-index:-1;
 	animation-name: ckw;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     transform-origin: 50% 50%;
+    
 }
 
 @keyframes ckw {
@@ -72,8 +72,8 @@ header h3 {
 	background-color:rgb(1, 141, 184);
 	overflow-x: hidden;
 	transition: 0.5s;
-	padding-top: 60px;
 	text-align:center;
+	overflow:hidden;
 }
 
 .navFull .botonCerrar {
@@ -127,4 +127,19 @@ input[type="submit"]{
 
 input {
 	margin:10px auto;
+}
+#tocadiscos {
+	fill:rgba(255, 255, 255, 0.5) !important;
+	animation-name: ckw;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.contenedorLogin {
+	display:flex;
+	
+}
+
+#eresNuevo {
+	width:100%;
 }
