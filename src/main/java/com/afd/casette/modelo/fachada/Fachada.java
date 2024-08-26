@@ -77,11 +77,11 @@ public class Fachada {
 		return dadoDeBaja;
 	 }
 
-	public List<Cancion> buscarCancionesPorTitulo(Usuario u, String titulo){
-		CancionDAO dao = new CancionDAO();
-		return dao.buscarCancionesPorTitulo(u, titulo);
-		
-	}	
+		public List<Cancion> buscarCancionesPorTitulo(Usuario u, String titulo) throws SQLException{
+			CancionDAO dao = new CancionDAO();
+			return dao.buscarCancionesPorTitulo(u, titulo);
+			
+		}
 	
 	
   	public List<Cancion> buscarCancionesPorAutor(String busqueda, Usuario usuario) throws SQLException {

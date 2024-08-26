@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,16 +15,17 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import com.afd.casette.modelo.Cancion;
+import com.afd.casette.modelo.TipoArchivo;
 import com.afd.casette.modelo.Usuario;
 
 public class CancionDAO {
 
 	private DataSource ds;
-	
+
 	private final static String INSERTAR_CANCION = "insert into cancion(titulo,autor,genero,duracion,portada,anho,archivo,privado,tipo,reproducciones,idUsuario)values(?,?,?,?,?,?,?,?,?,?,?)";
 	private final static String BUSCAR_CANCIONES_POR_AUTOR = "select * from cancion where autor like ? and privado = false or idUsuario = ?";
-	private static final String BUSCAR_CANCIONES_POR_TITULO = "select * from cancion where titulo like ? and (privado = false or idUsuario = ?)";
-	
+	private static final String BUSCAR_CANCIONES_POR_TITULO = "select * from cancion where titulo like ? and (privada = false or idUsuario = ?)";
+
 	public CancionDAO() {
 		try {
 			Context contexto = new InitialContext();
@@ -32,7 +34,7 @@ public class CancionDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void insertarCancion(Cancion cancion) throws SQLException {
 		Connection conexion = this.ds.getConnection();
 		PreparedStatement sentencia = conexion.prepareStatement(INSERTAR_CANCION);
@@ -50,29 +52,39 @@ public class CancionDAO {
 		sentencia.executeUpdate();
 		conexion.close();
 	}
-	public List<Cancion> buscarCancionesPorTitulo(Usuario u, String titulo){
 
-Connection conexion = this.ds.getConnection();
-PreparedStatement sentencia = conexion.prepareStatement(BUSCAR_CANCIONES_POR_TITULO);
-sentencia.setString (u.getIdUsuario(), titulo.getTitulo());
-ResultSet resultado = sentencia.executeQuery();
-List<Cancion> Canciones = new ArrayList<Cancion>();
+	public List<Cancion> buscarCancionesPorTitulo(Usuario u, String titulo) throws SQLException {
 
+		Connection conexion = this.ds.getConnection();
+		PreparedStatement sentencia = conexion.prepareStatement(BUSCAR_CANCIONES_POR_TITULO);
+		sentencia.setString(1, "%" + titulo + "%");
+		sentencia.setInt(2, u.getIdUsuario());
 
-while(resultado.next()) {
-	
-	
-	Cancion cancion  = new Cancion(0, u, titulo, titulo, titulo, null, titulo, 0, titulo, false, null, 0)
- {
-		
-		
+		ResultSet resultado = sentencia.executeQuery();
+		List<Cancion> canciones = new ArrayList<Cancion>();
+
+		while (resultado.next()) {
+			int idcancion = resultado.getInt("idcancion");
+			String tituloCancion = resultado.getString("titulo");
+			String autor = resultado.getString("autor");
+			String genero = resultado.getString("genero");
+			LocalTime duracion = resultado.getTime("duracion").toLocalTime();
+			String portada = resultado.getString("portada");
+			int anho = resultado.getInt("anho");
+			String archivo = resultado.getString("archivo");
+			boolean privada = resultado.getBoolean("privada");
+			TipoArchivo tipo = TipoArchivo.valueOf(resultado.getString("tipo"));
+			;
+			int reproducciones = resultado.getInt("reproducciones");
+
+			Cancion cancion = new Cancion(idcancion, u, tituloCancion, autor, genero, duracion, portada, anho, archivo,false, tipo, reproducciones);
+			canciones.add(cancion);
+
+		}
+		return canciones;
 	}
-	
-}
-return lista
-}
 
-public List<Cancion> buscarCancionesPorAutor(Usuario usuario, String autor) throws SQLException {
+	public List<Cancion> buscarCancionesPorAutor(Usuario usuario, String autor) throws SQLException {
 		Connection conexion = this.ds.getConnection();
 		PreparedStatement sentencia = conexion.prepareStatement(BUSCAR_CANCIONES_POR_AUTOR);
 		sentencia.setString(1, autor);
@@ -89,12 +101,14 @@ public List<Cancion> buscarCancionesPorAutor(Usuario usuario, String autor) thro
 			String archivo = resultado.getString("archivo");
 			boolean privada = resultado.getBoolean("privada");
 			TipoArchivo tipo = TipoArchivo.valueOf(resultado.getString("tipo"));
-;			int reproducciones = resultado.getInt("reproducciones");
-			
-			Cancion cancion = new Cancion(idcancion, usuario, titulo, autor, genero, duracion, portada, anho, archivo, privada, tipo, reproducciones);
+			;
+			int reproducciones = resultado.getInt("reproducciones");
+
+			Cancion cancion = new Cancion(idcancion, usuario, titulo, autor, genero, duracion, portada, anho, archivo,
+					privada, tipo, reproducciones);
 			canciones.add(cancion);
 		}
-		
+
 		return canciones;
 	}
 }
