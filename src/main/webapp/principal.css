@@ -1,6 +1,13 @@
+/* OPCIONES GLOBALES */
 * {
     box-sizing:border-box;
 }
+
+header {
+	border:1px solid white;
+	border-radius: 5px;
+}
+
 body {
 	background-color:black;
 	color:white;
@@ -10,13 +17,13 @@ body {
   	font-style: normal;
 }
 
+/* CABECERA */
 header h1, header h3 {
 	position:relative;
 	color:white;
 	text-align:center;
 	width:100%;
-	 font-family: "Kanit", sans-serif;
-	 margin-top:2em;
+	font-family: "Kanit", sans-serif;
 }
 
 header h1 {
@@ -28,7 +35,7 @@ header h3 {
 	font-size:2em;
 	font-weight: 400;
 }
-
+/* MENÚ FLOTANTE */
 .cabecera {
 	display:flex;
 	flex-wrap:wrap;
@@ -84,6 +91,7 @@ a {
 }
 
 
+
 .links {
 	border:1px solid white;
 	border-radius: 5px;
@@ -94,7 +102,67 @@ a {
 	font-size:1.5em;
 
 }
+.links li {
+	list-style-type: none;
+}
 
 .contenedor{
     display:flex;
+}
+
+/* SUBIR CANCIÓN + DAR BAJA + CAMBIAR CLAVE (forms) */
+#menuSubir, #formBaja, #cambioForm {
+	padding:2em;
+
+}
+
+#menuSubir fieldset, #formBaja fieldset, #cambioForm fieldset {
+	border: 1px solid rgb(1, 141, 184);
+	border-radius: 5px;
+}
+
+#menuSubir div, #formBaja div, #cambioForm div {
+	margin:1em;
+}
+
+#menuSubir legend, #menuSubir label, #formBaja legend, #cambioForm legend, #formBaja label, #cambioForm label {
+	font-family: "Kanit", sans-serif;
+	font-size:1.2em;
+}
+
+
+input[type="text"], input[type="number"] {
+	height:35px;
+	width:100%;
+	font-family: "Dosis", sans-serif;
+  	font-weight:400;
+ 	font-style: normal;
+	font-size:1em;
+	border:1px solid white;
+	border-radius: 5px;
+}
+
+
+
+
+input[type="submit"]{
+	height:35px;
+	border:1px solid white;
+	border-radius: 5px;
+	background-color:rgb(1, 141, 184);
+	color:white;
+	font-family: "Dosis", sans-serif;
+  	font-weight:400;
+ 	font-style: normal;
+	font-size:1em;
+	font-family: "Kanit", sans-serif;
+}
+
+/* MENSAJES ERROR CLAVE */
+
+#mensajeErrorClaveNueva,.mensajeErrorClave {
+	color: red;
+}
+.mensajeClaveCambiada {
+	color: green;
 }

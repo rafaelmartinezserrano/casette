@@ -15,15 +15,16 @@
 </head>
 
 <body>
+    
     <div id="botonAbrir" onclick="abrirNav()">&#9776;</div>
     <nav id="seccionFlotante" class="navFull">
         <div class="contenedor">
             <a href="javascript:void(0)" class="botonCerrar" onclick="cerrarNav()">X</a>
         <div class="links">
             <ul >
-                <li><a href="subirCancion.jsp">Subir Canción</a></li>
+                <li><a href="subirCancion.jsp">Subir canción</a></li>
                 <li><a href="cambiarClave.jsp">Cambiar contraseña</a></li>
-                <li><a href="CerrarSesion">Cerrar Sesión</a></li>            
+                <li><a href="CerrarSesion">Cerrar sesión</a></li>            
             </ul>
         </div>
         
@@ -69,9 +70,12 @@
         </div>
         
     </nav>
-    
+    <header>
+        <h1>Casette</h1>
+        <h3>Página principal</h3>
+    </header>
     <div>
-
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt aperiam architecto in ea eveniet exercitationem itaque fuga sed, iste at vero eum voluptatum perferendis tempore dolor quia quidem quos cumque!</p>
 
         
 
