@@ -7,13 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<h1>Dar de baja</h1>
+		<h1>Eliminara tu cuenta</h1>
 		
 		<form action="DarDeBaja" method="post">
 			
 			<label>Estas seguro de darte de baja ?</label>
 			<ol>
-				<li>Confirme con introducciendo su clave</li>
+				<li> Confirme introduciendo su clave</li>
 				<li> Darle al boton de "Borrar usuario"</li>
 			</ol>
 			

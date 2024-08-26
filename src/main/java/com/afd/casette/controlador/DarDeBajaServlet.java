@@ -17,27 +17,27 @@ import jakarta.servlet.http.HttpServletResponse;
 public class DarDeBajaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String clave = request.getParameter("claveActual");
-		
-		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
-		
-		Fachada fachada = new Fachada();
-		
-		try {
-		boolean deBaja = fachada.baja(usuario, clave);
-		if( deBaja == true){
-			response.sendRedirect("index.jsp");
-		}
 
-			
+		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
+
+		Fachada fachada = new Fachada();
+
+		try {
+			boolean deBaja = fachada.baja(usuario, clave);
+			if (deBaja == true) {
+				response.sendRedirect("index.jsp");
+			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			request.setAttribute("ErrorClacve", "No se pudo dar de baja tu cuenta");
 			request.getRequestDispatcher("darDebaja.jsp").forward(request, response);
-			
+
 		}
-		
+
 	}
 
 }
