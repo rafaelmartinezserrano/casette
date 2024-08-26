@@ -56,6 +56,6 @@
 			
 		</form>
 		<script type="text/javascript" src="scripts/cambiarClave.js"></script>
-		<script src="nav.js"></script>
+
 	</body>
 </html>
