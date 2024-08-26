@@ -156,11 +156,94 @@ input[type="submit"]{
 	font-size:1em;
 	font-family: "Kanit", sans-serif;
 	width:30%;
+
 }
+
+input[type="submit"]:hover{
+	margin-top:1em;
+	height:35px;
+	border:1px solid rgb(1, 141, 184);
+	color:rgb(1, 141, 184);
+	border-radius: 5px;
+	background-color:white;
+	font-family: "Dosis", sans-serif;
+  	font-weight:400;
+ 	font-style: normal;
+	font-size:1em;
+	font-family: "Kanit", sans-serif;
+	width:30%;
+	transition:0.2s ease-in-out;
+
+}
+
+input[type="submit"]:active{
+	margin-top:1em;
+	height:35px;
+	border:1px solid white;
+	color:white;
+	border-radius: 5px;
+	background-color:black;
+	font-family: "Dosis", sans-serif;
+  	font-weight:400;
+ 	font-style: normal;
+	font-size:1em;
+	font-family: "Kanit", sans-serif;
+	width:30%;}
+
+
+/* PÁGINAS DE BÚSQUEDA */
+
+.contenedorResultado {
+	margin:2em;
+	border: 1px solid rgb(1, 141, 184);
+	border-radius: 5px;
+	padding:1em;
+
+}
+
+#cajita_busqueda {
+	margin:2em;
+	border: 1px solid rgb(1, 141, 184);
+	border-radius: 5px;
+	padding:1em;
+}
+
 /* LISTA CANCIONES */
 
-audio {
-	display:block;
+audio, .canSpanTitulo {
+	margin:1em 5px;
+	display:inline-block;
+	font-size:1em;
+	font-family: "Kanit", sans-serif;
+}
+.cancionInd audio {
+	width:80%;
+}
+.cancionInd {
+	text-align: left;
+	background-color: rgb(1, 141, 184);
+	color:white;
+	border: 1px solid white;
+	border-radius: 5px;
+	margin:0.5em;
+	display:flex;
+	flex-direction: flex-end;
+	justify-content: space-between;
+	align-items: center;
+	transition:0.2s ease-in-out;
+}
+
+.cancionInd:hover {
+	text-align: left;
+	background-color: white;
+	color:rgb(1, 141, 184);
+	border: 1px solid rgb(1, 141, 184);
+	border-radius: 5px;
+	margin:0.5em;
+	display:flex;
+	flex-direction: flex-end;
+	justify-content: space-between;
+	align-items: center;
 }
 
 /* MENSAJES ERROR CLAVE */

@@ -27,11 +27,13 @@
 			</form>
 
 		</div>
-
-<% String mensajeError = (String)request.getAttribute("error"); %>
+		<div class="contenedorResultado">
+			<div class="mensaje">
+				<% String mensajeError = (String)request.getAttribute("error"); %>
 					<% if (mensajeError != null) { %>
 					<div class="error"><%=mensajeError %></div>
 					<%} %>
+			</div>
 
 		<%
 		List<Cancion> canciones = (List<Cancion>) request.getAttribute("listaCanciones");
@@ -44,7 +46,7 @@
 			for (Cancion cancion : canciones) {
 			%>
 			<div class="cancionInd">
-				<span><%=cancion.getTitulo()%></span>
+				<span class="canSpanTitulo"><%=cancion.getTitulo()%></span>
 				<audio controls>
 					<source
 						src=":/FICHEROS/<%=cancion.getUsuario().getIdUsuario()%>/MUSICA/<%=cancion.getArchivo()%>">
@@ -57,6 +59,8 @@
 		<%
 		}
 		%>
+		</div>
+
 
 
 

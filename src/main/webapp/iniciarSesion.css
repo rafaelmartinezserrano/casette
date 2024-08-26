@@ -129,7 +129,39 @@ input[type="submit"]{
   	font-weight:400;
  	font-style: normal;
 	font-size:1em;
+
 }
+
+
+input[type="submit"]:hover{
+	margin-top:1em;
+	height:35px;
+	border:1px solid rgb(1, 141, 184);
+	color:rgb(1, 141, 184);
+	border-radius: 5px;
+	background-color:white;
+	font-family: "Dosis", sans-serif;
+  	font-weight:400;
+ 	font-style: normal;
+	font-size:1em;
+	font-family: "Kanit", sans-serif;
+	width:30%;
+	transition:0.2s ease-in-out;
+}
+
+input[type="submit"]:active{
+	margin-top:1em;
+	height:35px;
+	border:1px solid white;
+	color:white;
+	border-radius: 5px;
+	background-color:black;
+	font-family: "Dosis", sans-serif;
+  	font-weight:400;
+ 	font-style: normal;
+	font-size:1em;
+	font-family: "Kanit", sans-serif;
+	width:30%;}
 
 input {
 	margin:10px auto;
