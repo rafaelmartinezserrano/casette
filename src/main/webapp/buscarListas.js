@@ -22,7 +22,8 @@ function verListas(listasReproduccion, cancion) {
 function addCancion(idLista, idCancion) {
 	//alert(`Añadiendo cancion ${idCancion} a lista ${idLista}`);
 	fetch(`AgregarCancionLista?idCancion=${idCancion}&idLista=${idLista}`)
-	.then(respuesta => console.log(respuesta));
+	.then(document.getElementById("contenedorListas").style.display = "none");
+	
 }
 
 
