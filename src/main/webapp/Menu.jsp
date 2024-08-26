@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <div id="botonAbrir" onclick="abrirNav()">&#9776;</div>
 		<nav id="seccionFlotante" class="navFull">
 			<div class="contenedor">
