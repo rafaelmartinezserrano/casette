@@ -5,10 +5,6 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<style type="text/css">
-		
-		</style>
 		<link type="text/css" rel="stylesheet" href="principal.css"/>
 		<title>Cambiar contraseña</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,17 +88,20 @@
 						<div class="mensajeErrorClave"><%=mensajeClaveNoValida %></div>
 					<% } %>
 				</div>
-				<div>
-					<label for="txtClaveNueva1">Contraseña nueva</label>
+				
+					<div>
+						<label for="txtClaveNueva1">Contraseña nueva</label>
 					<input type="password" name="claveNueva1" id="txtClaveNueva1" placeholder="Nueva contraseña"/>
-					<input type="password" name="claveNueva2" id="txtClaveNueva2" placeholder="Vuelva a escribir la nueva contraseña"/>
-					<div id="mensajeErrorClaveNueva">
-						<% String mensajeErrorClaveNueva = (String) request.getAttribute("mensajeErrorClaveNueva"); %>
-						<% if(mensajeErrorClaveNueva != null) { %>
-							<div class="mensajeErrorClave"><%=mensajeErrorClaveNueva %></div>
-						<% } %>
 					</div>
-				</div>
+					<div> <input type="password" name="claveNueva2" id="txtClaveNueva2" placeholder="Vuelva a escribir la nueva contraseña"/>
+						<div id="mensajeErrorClaveNueva">
+							<% String mensajeErrorClaveNueva = (String) request.getAttribute("mensajeErrorClaveNueva"); %>
+							<% if(mensajeErrorClaveNueva != null) { %>
+								<div class="mensajeErrorClave"><%=mensajeErrorClaveNueva %></div>
+							<% } %></div>
+					
+					</div>
+				
 				<div>
 					<input id="btnCambiarClave" type="submit" value="Guardar cambios">
 				</div>
