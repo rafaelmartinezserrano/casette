@@ -89,5 +89,6 @@
 	<% if (mensajeError != null) { %>
 		<div class="error"><%=mensajeError %></div>
 	<%} %>
+	<script src="nav.js"></script>
 </body>
 </html>

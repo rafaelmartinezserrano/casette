@@ -157,6 +157,11 @@ input[type="submit"]{
 	font-family: "Kanit", sans-serif;
 	width:30%;
 }
+/* LISTA CANCIONES */
+
+audio {
+	display:block;
+}
 
 /* MENSAJES ERROR CLAVE */
 
