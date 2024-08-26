@@ -155,4 +155,14 @@
 		<url-pattern>/EditarLista</url-pattern>
 	</servlet-mapping>
 	
+  <servlet>
+    <description></description>
+    <display-name>BuscarListasUsuarioServlet</display-name>
+    <servlet-name>BuscarListasUsuarioServlet</servlet-name>
+    <servlet-class>com.afd.casette.controlador.BuscarListasUsuarioServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarListasUsuarioServlet</servlet-name>
+    <url-pattern>/BuscarListasUsuario</url-pattern>
+  </servlet-mapping>
 </web-app>

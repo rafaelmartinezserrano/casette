@@ -52,10 +52,8 @@ public class Fachada {
 		CancionListaDAO dao = new CancionListaDAO();
 		int pos = dao.sumarPocision(idLista);
 
-		if (pos != 0) {
-			pos++;
-			dao.agregarCancionLista(pos, idCancion, idLista);
-		}
+		pos++;
+		dao.agregarCancionLista(pos, idCancion, idLista);
 
 	}
 
@@ -98,4 +96,8 @@ public class Fachada {
 		return dao.actualizarListaPorId(idLista, nombreLista, listaCanciones);
 	}
 
+	public List<ListaReproduccion> buscarListasPorUsuario(Usuario usuario) throws SQLException {
+		CancionListaDAO dao = new CancionListaDAO();
+		return dao.buscarListasPorUsuario(usuario);
+	}
 }

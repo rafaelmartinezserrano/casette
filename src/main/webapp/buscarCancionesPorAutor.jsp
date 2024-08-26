@@ -7,7 +7,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Casette</title>
-
+<style>
+	.lista {
+		list-style-type: none;
+	}
+	.lista:hover{
+		background-color: orange;
+	}
+</style>
 </head>
 <body>
 
@@ -30,9 +37,13 @@
 			<audio controls>
 				<source src="../FICHEROS/<%=cancion.getUsuario().getIdUsuario() %>/MUSICA/<%=cancion.getArchivo()%>">
 			</audio>
+			<input type="button" value="Añadir a lista" onclick="buscarListas(<%=cancion.getIdCancion()%>);"/>
 		</div>
 	<%} %>
 	</div>
 <%} %>
+
+<div id="contenedorListas" style="display:none"></div>
+<script src="buscarListas.js"></script>
 </body>
 </html>

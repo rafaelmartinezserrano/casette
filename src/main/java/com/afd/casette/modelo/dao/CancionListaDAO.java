@@ -138,4 +138,18 @@ public class CancionListaDAO {
 		}
 	}
 
+	public List<ListaReproduccion> buscarListasPorUsuario(Usuario usuario) throws SQLException {
+		Connection conexion = this.ds.getConnection();
+		PreparedStatement sentencia = conexion.prepareStatement(BUSCAR_LISTAS_USUARIO);
+		sentencia.setInt(1, usuario.getIdUsuario());
+		ResultSet resultado = sentencia.executeQuery();
+		List<ListaReproduccion> listas = new ArrayList<ListaReproduccion>();
+		while (resultado.next()) {
+			int idLista = resultado.getInt("idLista");
+			String nombre = resultado.getString("nombre");
+			ListaReproduccion lista = new ListaReproduccion(idLista, nombre);
+			listas.add(lista);
+		}
+		return listas;
+	}
 }
