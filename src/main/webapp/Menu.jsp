@@ -7,8 +7,14 @@
 			<div class="links">
 				<ul >
 					<li><a href="subirCancion.jsp">Subir canción</a></li>
+					<li><a href="crearLista.jsp">Crear lista</a></li> 
+					<li><a href="VerListasUsuario">Ver listas</a></li>
+					<li><a href="buscarCancionesPorAutor.jsp">Buscar canciones por autor</a></li> 
+					<li><a href="buscarCancionesTitulo.jsp">Buscar canciones por título</a></li> 
+					<li><a href="dardeBaja.jsp">Dar de baja</a></li> 
 					<li><a href="cambiarClave.jsp">Cambiar contraseña</a></li>
-					<li><a href="CerrarSesion">Cerrar sesión</a></li>            
+					<li><a href="CerrarSesion">Cerrar sesión</a></li> 
+					           
 				</ul>
 			</div>
 			

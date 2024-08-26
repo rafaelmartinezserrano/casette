@@ -1,26 +1,22 @@
 package com.afd.casette.controlador;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
-
-import org.apache.tomcat.util.json.JSONParser;
 
 import com.afd.casette.modelo.ListaReproduccion;
 import com.afd.casette.modelo.Usuario;
 import com.afd.casette.modelo.fachada.Fachada;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class BuscarListasUsuarioServlet
+ * Servlet implementation class VerListasUsuarioServlet
  */
-public class BuscarListasUsuarioServlet extends HttpServlet {
+public class VerListasUsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -31,13 +27,8 @@ public class BuscarListasUsuarioServlet extends HttpServlet {
 		Fachada fachada = new Fachada();
 		try {
 			List<ListaReproduccion> listas = fachada.buscarListasPorUsuario(usuario);
-			ObjectMapper mapeador = new ObjectMapper();
-			String json = mapeador.writeValueAsString(listas);
-			//System.out.println("BuscarListasUsuarioServlet -> Listas: " + json);
-			PrintWriter salida = response.getWriter();
-			response.setContentType("application/json");
-			salida.write(json);
-			salida.close();
+			request.setAttribute("listas", listas);
+			request.getRequestDispatcher("verListas.jsp").forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -152,6 +152,7 @@ public class CancionListaDAO {
 			ListaReproduccion lista = new ListaReproduccion(idLista, nombre);
 			listas.add(lista);
 		}
+		conexion.close();
 		return listas;
 	}
 }

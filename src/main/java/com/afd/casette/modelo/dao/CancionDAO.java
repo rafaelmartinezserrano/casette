@@ -22,7 +22,7 @@ public class CancionDAO {
 
 	private DataSource ds;
 
-	private final static String INSERTAR_CANCION = "insert into cancion(titulo,autor,genero,duracion,portada,anho,archivo,privado,tipo,reproducciones,idUsuario)values(?,?,?,?,?,?,?,?,?,?,?)";
+	private final static String INSERTAR_CANCION = "insert into cancion(titulo,autor,genero,duracion,portada,anho,archivo,privada,tipo,reproducciones,idUsuario)values(?,?,?,?,?,?,?,?,?,?,?)";
 	private final static String BUSCAR_CANCIONES_POR_AUTOR = "select * from cancion where autor like ? and (privada = false or idUsuario = ?)";
 	private static final String BUSCAR_CANCIONES_POR_TITULO = "select * from cancion where titulo like ? and (privada = false or idUsuario = ?)";
 
