@@ -75,5 +75,10 @@ public class Fachada {
 		}
 		return dadoDeBaja;
 	 }
-	
+
+	public List<Cancion> buscarCancionesPorTitulo(Usuario u, String titulo){
+		CancionDAO dao = new CancionDAO();
+		return dao.buscarCancionesPorTitulo(u, titulo);
+		
+	}	
 }

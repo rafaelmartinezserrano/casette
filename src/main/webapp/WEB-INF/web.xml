@@ -102,4 +102,15 @@
     <servlet-name>DarDeBajaServlet</servlet-name>
     <url-pattern>/DarDeBaja</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>BuscarCancionesTituloServlet</display-name>
+    <servlet-name>BuscarCancionesTituloServlet</servlet-name>
+    <servlet-class>com.afd.casette.controlador.BuscarCancionesTituloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarCancionesTituloServlet</servlet-name>
+    <url-pattern>/BuscarCancionesTitulo</url-pattern>
+  </servlet-mapping>
 </web-app>
