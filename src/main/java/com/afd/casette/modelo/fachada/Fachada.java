@@ -81,4 +81,11 @@ public class Fachada {
 		return dao.buscarCancionesPorTitulo(u, titulo);
 		
 	}	
+	
+	
+  	public List<Cancion> buscarCancionesPorAutor(String busqueda, Usuario usuario) throws SQLException {
+		CancionDAO dao = new CancionDAO();
+		return dao.buscarCancionesPorAutor(usuario, busqueda);
+	}
+	
 }

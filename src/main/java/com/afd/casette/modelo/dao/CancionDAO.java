@@ -21,7 +21,7 @@ public class CancionDAO {
 	private DataSource ds;
 	
 	private final static String INSERTAR_CANCION = "insert into cancion(titulo,autor,genero,duracion,portada,anho,archivo,privado,tipo,reproducciones,idUsuario)values(?,?,?,?,?,?,?,?,?,?,?)";
-
+	private final static String BUSCAR_CANCIONES_POR_AUTOR = "select * from cancion where autor like ? and privado = false or idUsuario = ?";
 	private static final String BUSCAR_CANCIONES_POR_TITULO = "select * from cancion where titulo like ? and (privado = false or idUsuario = ?)";
 	
 	public CancionDAO() {
@@ -71,4 +71,30 @@ while(resultado.next()) {
 }
 return lista
 }
+
+public List<Cancion> buscarCancionesPorAutor(Usuario usuario, String autor) throws SQLException {
+		Connection conexion = this.ds.getConnection();
+		PreparedStatement sentencia = conexion.prepareStatement(BUSCAR_CANCIONES_POR_AUTOR);
+		sentencia.setString(1, autor);
+		sentencia.setInt(2, usuario.getIdUsuario());
+		List<Cancion> canciones = new ArrayList<Cancion>();
+		ResultSet resultado = sentencia.executeQuery();
+		while (resultado.next()) {
+			int idcancion = resultado.getInt("idcancion");
+			String titulo = resultado.getString("titulo");
+			String genero = resultado.getString("genero");
+			LocalTime duracion = resultado.getTime("duracion").toLocalTime();
+			String portada = resultado.getString("portada");
+			int anho = resultado.getInt("anho");
+			String archivo = resultado.getString("archivo");
+			boolean privada = resultado.getBoolean("privada");
+			TipoArchivo tipo = TipoArchivo.valueOf(resultado.getString("tipo"));
+;			int reproducciones = resultado.getInt("reproducciones");
+			
+			Cancion cancion = new Cancion(idcancion, usuario, titulo, autor, genero, duracion, portada, anho, archivo, privada, tipo, reproducciones);
+			canciones.add(cancion);
+		}
+		
+		return canciones;
+	}
 }

@@ -113,4 +113,15 @@
     <servlet-name>BuscarCancionesTituloServlet</servlet-name>
     <url-pattern>/BuscarCancionesTitulo</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>BuscarCancionesPorAutor</display-name>
+    <servlet-name>BuscarCancionesPorAutor</servlet-name>
+    <servlet-class>com.afd.casette.controlador.BuscarCancionesPorAutor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarCancionesPorAutor</servlet-name>
+    <url-pattern>/BuscarCancionesPorAutor</url-pattern>
+  </servlet-mapping>
 </web-app>
