@@ -20,7 +20,7 @@ public class UsuarioDAO {
 	private DataSource ds;
 	
 	private final static String INSERTAR_USUARIO = "INSERT INTO usuario (nombreUsuario,clave,email,fechaNacimiento) VALUES (?,?,?,?)";
-	private final static String BUSCAR_USUARIO_POR_NOMBRE = "SELECT * FROM usuario WHERE nombreUsuario = ?";
+	private final static String BUSCAR_USUARIO_POR_NOMBRE = "SELECT * FROM usuario WHERE nombreUsuario = ? and deBaja = false";
 	private final static String ACTUALIZAR_CLAVE_USUARIO = "UPDATE usuario SET clave = ? WHERE nombreUsuario = ?";
 	private final static String DAR_DE_BAJA = "UPDATE usuario SET deBaja = true WHERE idUsuario = ?";
 	
