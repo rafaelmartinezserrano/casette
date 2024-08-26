@@ -4,6 +4,7 @@
 	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
 	version="6.0">
 	<display-name>Casette</display-name>
+	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -17,6 +18,7 @@
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
 	</resource-ref>
+	
 	<servlet>
 		<description></description>
 		<display-name>CerrarSesionServlet</display-name>
@@ -27,6 +29,7 @@
 		<servlet-name>CerrarSesionServlet</servlet-name>
 		<url-pattern>/CerrarSesion</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<description></description>
 		<display-name>RegistroServlet</display-name>
@@ -37,6 +40,7 @@
 		<servlet-name>RegistroServlet</servlet-name>
 		<url-pattern>/Registro</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<description></description>
 		<display-name>IniciarSesionServlet</display-name>
@@ -47,6 +51,7 @@
 		<servlet-name>IniciarSesionServlet</servlet-name>
 		<url-pattern>/IniciarSesion</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<description></description>
 		<display-name>SubirCancionServlet</display-name>
@@ -61,6 +66,7 @@
 		<servlet-name>SubirCancionServlet</servlet-name>
 		<url-pattern>/SubirCancion</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<description></description>
 		<display-name>CambiarClaveServlet</display-name>
@@ -82,6 +88,7 @@
 		<servlet-name>AgregarCancionListaServlet</servlet-name>
 		<url-pattern>/AgregarCancionLista</url-pattern>
 	</servlet-mapping>
+	
 	<servlet>
 		<description></description>
 		<display-name>CargarListaServlet</display-name>
@@ -92,47 +99,60 @@
 		<servlet-name>CargarListaServlet</servlet-name>
 		<url-pattern>/CargarLista</url-pattern>
 	</servlet-mapping>
-	  <servlet>
-    <description></description>
-    <display-name>DarDeBajaServlet</display-name>
-    <servlet-name>DarDeBajaServlet</servlet-name>
-    <servlet-class>com.afd.casette.controlador.DarDeBajaServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DarDeBajaServlet</servlet-name>
-    <url-pattern>/DarDeBaja</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-    <description></description>
-    <display-name>BuscarCancionesTituloServlet</display-name>
-    <servlet-name>BuscarCancionesTituloServlet</servlet-name>
-    <servlet-class>com.afd.casette.controlador.BuscarCancionesTituloServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>BuscarCancionesTituloServlet</servlet-name>
-    <url-pattern>/BuscarCancionesTitulo</url-pattern>
-  </servlet-mapping>
-  
-    <servlet>
-    <description></description>
-    <display-name>BuscarCancionesPorAutor</display-name>
-    <servlet-name>BuscarCancionesPorAutor</servlet-name>
-    <servlet-class>com.afd.casette.controlador.BuscarCancionesPorAutor</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>BuscarCancionesPorAutor</servlet-name>
-    <url-pattern>/BuscarCancionesPorAutor</url-pattern>
-  </servlet-mapping>
-  
-    <servlet>
-    <description></description>
-    <display-name>CrearListaServlet</display-name>
-    <servlet-name>CrearListaServlet</servlet-name>
-    <servlet-class>com.afd.casette.controlador.CrearListaServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CrearListaServlet</servlet-name>
-    <url-pattern>/CrearLista</url-pattern>
-  </servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>DarDeBajaServlet</display-name>
+		<servlet-name>DarDeBajaServlet</servlet-name>
+		<servlet-class>com.afd.casette.controlador.DarDeBajaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DarDeBajaServlet</servlet-name>
+		<url-pattern>/DarDeBaja</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>BuscarCancionesTituloServlet</display-name>
+		<servlet-name>BuscarCancionesTituloServlet</servlet-name>
+		<servlet-class>com.afd.casette.controlador.BuscarCancionesTituloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BuscarCancionesTituloServlet</servlet-name>
+		<url-pattern>/BuscarCancionesTitulo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>BuscarCancionesPorAutor</display-name>
+		<servlet-name>BuscarCancionesPorAutor</servlet-name>
+		<servlet-class>com.afd.casette.controlador.BuscarCancionesPorAutor</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BuscarCancionesPorAutor</servlet-name>
+		<url-pattern>/BuscarCancionesPorAutor</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>CrearListaServlet</display-name>
+		<servlet-name>CrearListaServlet</servlet-name>
+		<servlet-class>com.afd.casette.controlador.CrearListaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CrearListaServlet</servlet-name>
+		<url-pattern>/CrearLista</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>EditarListaServlet</display-name>
+		<servlet-name>EditarListaServlet</servlet-name>
+		<servlet-class>com.afd.casette.controlador.EditarListaServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditarListaServlet</servlet-name>
+		<url-pattern>/EditarLista</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

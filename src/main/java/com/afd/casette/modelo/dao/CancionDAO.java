@@ -77,7 +77,7 @@ public class CancionDAO {
 			;
 			int reproducciones = resultado.getInt("reproducciones");
 
-			Cancion cancion = new Cancion(idcancion, u, tituloCancion, autor, genero, duracion, portada, anho, archivo,false, tipo, reproducciones);
+			Cancion cancion = new Cancion(idcancion, u, tituloCancion, autor, genero, duracion, portada, anho, archivo, privada, tipo, reproducciones);
 			canciones.add(cancion);
 
 		}
