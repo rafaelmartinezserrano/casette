@@ -25,6 +25,7 @@ public class CancionListaDAO {
 	private final static String OBTENER_ULTIMA_POSICION_LISTA ="SELECT MAX(pos) AS pos FROM cancionLista WHERE idLista = ?";
 	private final static String BUSCAR_LISTA_POR_ID = "SELECT * FROM listaReproduccion WHERE idLista = ? AND idUsuario = ?";
 	private final static String BUSCAR_CANCIONES_POR_LISTA = "SELECT * FROM cancionLista CL JOIN cancion C ON CL.idCancion = C.idCancion WHERE idLista = ? ORDER BY pos";
+	private final static String INSERTAR_LISTA = "INSERT INTO ListaReproduccion (idUsuario,nombre) VALUES (?,?)";
 	
 	public CancionListaDAO() {
 		try {
@@ -95,4 +96,15 @@ public class CancionListaDAO {
 		return lista;
 	}
 
+	public void crearlista(String lista, int idUsuario) throws SQLException{
+		Connection conexion = this.ds.getConnection();
+		PreparedStatement sentencia = conexion.prepareStatement(INSERTAR_LISTA);
+		sentencia.setInt(1, idUsuario);
+		sentencia.setString(2, lista);
+		sentencia.executeUpdate();
+		
+		conexion.close();
+
+	}
+	
 }
