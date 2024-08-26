@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.naming.Context;
@@ -28,7 +29,8 @@ public class CancionListaDAO {
 	private final static String INSERTAR_LISTA = "INSERT INTO ListaReproduccion (idUsuario,nombre) VALUES (?,?)";
 	private final static String ACTUALIZAR_NOMBRE_LISTA_POR_ID = "UPDATE listaReproduccion SET nombre = ? WHERE idLista = ?";
 	private final static String ACTUALIZAR_POSICION_CANCION_POR_ID = "UPDATE CancionLista SET pos = ? WHERE idLista = ? AND idCancion = ?";
-
+	private final static String BUSCAR_LISTAS_USUARIO = "select * from listaReproduccion where idUsuario = ?";
+	
 	public CancionListaDAO() {
 		try {
 			Context contexto = new InitialContext();
