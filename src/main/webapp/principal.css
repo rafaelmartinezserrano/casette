@@ -6,6 +6,7 @@
 header {
 	border:1px solid white;
 	border-radius: 5px;
+	margin: auto 2em;
 }
 
 body {
@@ -91,7 +92,6 @@ a {
 }
 
 
-
 .links {
 	border:1px solid white;
 	border-radius: 5px;
@@ -111,27 +111,27 @@ a {
 }
 
 /* SUBIR CANCIÓN + DAR BAJA + CAMBIAR CLAVE (forms) */
-#menuSubir, #formBaja, #cambioForm {
+#menuSubir, #formBaja, #cambioForm, #formRegistro {
 	padding:2em;
 
 }
 
-#menuSubir fieldset, #formBaja fieldset, #cambioForm fieldset {
+fieldset {
 	border: 1px solid rgb(1, 141, 184);
 	border-radius: 5px;
 }
 
-#menuSubir div, #formBaja div, #cambioForm div {
+form div {
 	margin:1em;
 }
 
-#menuSubir legend, #menuSubir label, #formBaja legend, #cambioForm legend, #formBaja label, #cambioForm label {
+legend, label {
 	font-family: "Kanit", sans-serif;
 	font-size:1.2em;
 }
 
 
-input[type="text"], input[type="number"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"]{
 	height:35px;
 	width:100%;
 	font-family: "Dosis", sans-serif;
@@ -143,9 +143,8 @@ input[type="text"], input[type="number"] {
 }
 
 
-
-
 input[type="submit"]{
+	margin-top:1em;
 	height:35px;
 	border:1px solid white;
 	border-radius: 5px;
@@ -156,11 +155,12 @@ input[type="submit"]{
  	font-style: normal;
 	font-size:1em;
 	font-family: "Kanit", sans-serif;
+	width:30%;
 }
 
 /* MENSAJES ERROR CLAVE */
 
-#mensajeErrorClaveNueva,.mensajeErrorClave {
+#mensajeErrorClaveNueva,.mensajeErrorClave, .error {
 	color: red;
 }
 .mensajeClaveCambiada {
