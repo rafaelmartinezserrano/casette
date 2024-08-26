@@ -3,6 +3,7 @@ package com.afd.casette.modelo;
 import java.time.LocalTime;
 import java.util.Objects;
 
+
 public class Cancion {
 	private int idCancion;
 	private Usuario usuario;
@@ -21,7 +22,6 @@ public class Cancion {
 
 	public Cancion(int idCancion, Usuario usuario, String titulo, String autor, String genero, LocalTime duracion,
 			String portada, int anho, String archivo, boolean privada, TipoArchivo tipo, int reproducciones) {
-		super();
 		this.idCancion = idCancion;
 		this.usuario = usuario;
 		this.titulo = titulo;
@@ -38,7 +38,6 @@ public class Cancion {
 	
 	public Cancion(int idCancion, Usuario usuario, String titulo, String autor, String genero, LocalTime duracion,
 			String portada, int anho, String archivo, boolean privada, TipoArchivo tipo) {
-		super();
 		this.idCancion = idCancion;
 		this.usuario = usuario;
 		this.titulo = titulo;
