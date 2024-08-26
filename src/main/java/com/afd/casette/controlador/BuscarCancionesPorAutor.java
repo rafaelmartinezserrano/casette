@@ -28,7 +28,9 @@ public class BuscarCancionesPorAutor extends HttpServlet {
 	
 	Fachada fachada = new Fachada();
 	try {
+		System.out.println(busqueda);
 		List<Cancion> listaCanciones = fachada.buscarCancionesPorAutor(busqueda, usuario);
+		System.out.println(listaCanciones);
 		//Guardo el resultado en la request (solo lo necesito para esta petición)
 		request.setAttribute("listaCanciones", listaCanciones);
 		//Salto a la JSP

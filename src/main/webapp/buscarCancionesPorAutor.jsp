@@ -14,7 +14,7 @@
 
 <form action="BuscarCancionesPorAutor" method="get" class="contenedorForm"/>
 <label for="buscarPorAutor">Nombre del Autor:</label>
-<input type="search" id="buscarPorAutor name="buscarPorAutor"/>
+<input type="search" id="buscarPorAutor" name="buscarPorAutor"/>
 <form/>
  
  <div>
@@ -23,16 +23,16 @@
 
 <%List <Cancion> canciones = (List <Cancion>)request.getAttribute("listaCanciones");  %>
 <%if (canciones != null) { %>
-<div>
-<%for (Cancion cancion: canciones ){ %>
-<div>
-<span><%= cancion.getTitulo() %></span>
-<audio controls>
-<source src=":/FICHEROS/<%=cancion.getUsuario().getIdUsuario() %>/MUSICA/<%=cancion.getArchivo()>%">
-</audio>
-</div>
-<%} %>
-</div>
+	<div>
+	<%for (Cancion cancion: canciones ){ %>
+		<div>
+			<span><%= cancion.getTitulo() %></span>
+			<audio controls>
+				<source src="../FICHEROS/<%=cancion.getUsuario().getIdUsuario() %>/MUSICA/<%=cancion.getArchivo()%>">
+			</audio>
+		</div>
+	<%} %>
+	</div>
 <%} %>
 </body>
 </html>

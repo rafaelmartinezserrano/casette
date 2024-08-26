@@ -83,10 +83,10 @@ public class Fachada {
 			
 		}
 	
-	
-  	public List<Cancion> buscarCancionesPorAutor(String busqueda, Usuario usuario) throws SQLException {
-		CancionDAO dao = new CancionDAO();
-		return dao.buscarCancionesPorAutor(usuario, busqueda);
-	}
+	  	public List<Cancion> buscarCancionesPorAutor(String busqueda, Usuario usuario) throws SQLException {
+			CancionDAO dao = new CancionDAO();
+			return dao.buscarCancionesPorAutor(usuario, busqueda);
+		}
+	  	
 	
 }

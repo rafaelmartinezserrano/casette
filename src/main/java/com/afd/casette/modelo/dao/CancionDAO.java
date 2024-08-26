@@ -23,7 +23,7 @@ public class CancionDAO {
 	private DataSource ds;
 
 	private final static String INSERTAR_CANCION = "insert into cancion(titulo,autor,genero,duracion,portada,anho,archivo,privado,tipo,reproducciones,idUsuario)values(?,?,?,?,?,?,?,?,?,?,?)";
-	private final static String BUSCAR_CANCIONES_POR_AUTOR = "select * from cancion where autor like ? and privado = false or idUsuario = ?";
+	private final static String BUSCAR_CANCIONES_POR_AUTOR = "select * from cancion where autor like ? and (privada = false or idUsuario = ?)";
 	private static final String BUSCAR_CANCIONES_POR_TITULO = "select * from cancion where titulo like ? and (privada = false or idUsuario = ?)";
 
 	public CancionDAO() {
@@ -87,8 +87,9 @@ public class CancionDAO {
 	public List<Cancion> buscarCancionesPorAutor(Usuario usuario, String autor) throws SQLException {
 		Connection conexion = this.ds.getConnection();
 		PreparedStatement sentencia = conexion.prepareStatement(BUSCAR_CANCIONES_POR_AUTOR);
-		sentencia.setString(1, autor);
+		sentencia.setString(1, "%"+autor+"%");
 		sentencia.setInt(2, usuario.getIdUsuario());
+		System.out.println(sentencia);
 		List<Cancion> canciones = new ArrayList<Cancion>();
 		ResultSet resultado = sentencia.executeQuery();
 		while (resultado.next()) {
@@ -101,14 +102,12 @@ public class CancionDAO {
 			String archivo = resultado.getString("archivo");
 			boolean privada = resultado.getBoolean("privada");
 			TipoArchivo tipo = TipoArchivo.valueOf(resultado.getString("tipo"));
-			;
-			int reproducciones = resultado.getInt("reproducciones");
-
-			Cancion cancion = new Cancion(idcancion, usuario, titulo, autor, genero, duracion, portada, anho, archivo,
-					privada, tipo, reproducciones);
+;			int reproducciones = resultado.getInt("reproducciones");
+			
+			Cancion cancion = new Cancion(idcancion, usuario, titulo, autor, genero, duracion, portada, anho, archivo, privada, tipo, reproducciones);
 			canciones.add(cancion);
 		}
-
+		
 		return canciones;
 	}
 }
