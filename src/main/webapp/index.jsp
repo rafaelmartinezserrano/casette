@@ -50,7 +50,7 @@
 		</header>
 
 	
-	<section id="seccionLogin" class="navFull">
+	<section id="seccionFlotante" class="navFull">
 		<div class="contenedorLogin">
 			<a href="javascript:void(0)" class="botonCerrar" onclick="cerrarNav()">X</a>
 			<form action="IniciarSesion" method="post" id="inicioSesion">

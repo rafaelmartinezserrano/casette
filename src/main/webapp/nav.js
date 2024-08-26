@@ -1,7 +1,7 @@
 function abrirNav() {
-    document.getElementById("seccionLogin").style.width = "100%";
+    document.getElementById("seccionFlotante").style.width = "100%";
   }
   
   function cerrarNav() {
-    document.getElementById("seccionLogin").style.width = "0";
+    document.getElementById("seccionFlotante").style.width = "0";
   }

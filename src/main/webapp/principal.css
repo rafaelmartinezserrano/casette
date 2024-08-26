@@ -1,7 +1,6 @@
 * {
     box-sizing:border-box;
 }
-
 body {
 	background-color:black;
 	color:white;
@@ -37,30 +36,6 @@ header h3 {
 	transform:translateZ(0);
 	padding:105px;
 }
-
-#casette {
-	fill:rgba(0, 135, 173, 0.496) !important;
-	max-height:100%;
-	position:absolute;
-	margin:auto;
-	left:41%;
-	z-index:-1;
-	animation-name: ckw;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    transform-origin: 50% 50%;
-    
-}
-
-@keyframes ckw {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 #botonAbrir{
 	cursor:pointer;
 	font-size: 36px;
@@ -90,8 +65,26 @@ header h3 {
 	text-decoration: none;
 	margin: 10px 0;
 }
+a {
+	color:white;
+}
+#tocadiscos {
+	fill:rgba(255, 255, 255, 0.5) !important;
+	animation-name: ckw;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes ckw {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
-#inicioSesion {
+
+.links {
 	border:1px solid white;
 	border-radius: 5px;
 	margin: auto 2em;
@@ -102,48 +95,6 @@ header h3 {
 
 }
 
-a {
-	color:white;
-}
-
-input[type="text"], input[type="password"] {
-	height:35px;
-	width:100%;
-	font-family: "Dosis", sans-serif;
-  	font-weight:400;
- 	font-style: normal;
-	font-size:1em;
-	border:1px solid white;
-	border-radius: 5px;
-}
-
-input[type="submit"]{
-	height:35px;
-	border:1px solid white;
-	border-radius: 5px;
-	background-color:rgb(1, 141, 184);
-	color:white;
-	font-family: "Dosis", sans-serif;
-  	font-weight:400;
- 	font-style: normal;
-	font-size:1em;
-}
-
-input {
-	margin:10px auto;
-}
-#tocadiscos {
-	fill:rgba(255, 255, 255, 0.5) !important;
-	animation-name: ckw;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-}
-
-.contenedorLogin {
-	display:flex;
-	
-}
-
-#eresNuevo {
-	width:100%;
+.contenedor{
+    display:flex;
 }
