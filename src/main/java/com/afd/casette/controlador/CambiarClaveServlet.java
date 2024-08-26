@@ -26,10 +26,10 @@ public class CambiarClaveServlet extends HttpServlet {
 
 		String claveActual = request.getParameter("claveActual");
 		String claveNueva = request.getParameter("claveNueva1");
-		
+
 		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
 		Fachada fachada = new Fachada();
-		
+
 		if (usuario != null) {
 			String mensaje = "";
 			String atributo = "";
@@ -42,14 +42,15 @@ public class CambiarClaveServlet extends HttpServlet {
 					atributo = "mensajeClaveNoValida";
 					mensaje = "La contraseña no es válida";
 				}
-				
+
 			} catch (SQLException e) {
 				e.printStackTrace();
 				atributo = "mensajeErrorConexion";
 				mensaje = "Problemas de conexión. Vuelva a intentarlo en unos minutos o contacte con soporte";
 			} finally {
 				request.setAttribute(atributo, mensaje);
-				request.getRequestDispatcher("cambiarClave.jsp").forward(request, response);	// Cambiar el .jsp si se incluye en otro JSP
+				request.getRequestDispatcher("cambiarClave.jsp").forward(request, response); // Cambiar el .jsp si se
+																								// incluye en otro JSP
 			}
 		} else {
 			response.sendRedirect("index.jsp");

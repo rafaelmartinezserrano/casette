@@ -24,12 +24,12 @@ public class CargarListaServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		int idLista = Integer.parseInt(request.getParameter("idLista"));
 		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
-		
+
 		Fachada fachada = new Fachada();
-		if(usuario != null) {
+		if (usuario != null) {
 			try {
 				ListaReproduccion lista = fachada.buscarListaPorId(idLista, usuario);
 				request.setAttribute("listaReproduccion", lista);
@@ -37,7 +37,8 @@ public class CargarListaServlet extends HttpServlet {
 			} catch (SQLException e) {
 				e.printStackTrace();
 				// request.setAttribute("mensajeErrorConexionLista", "Problemas de conexion");
-				// request.getRequestDispatcher("principal.jsp").forward(request, response); // Redireccion a la vista desde donde se dió a editar la lista
+				// request.getRequestDispatcher("principal.jsp").forward(request, response); //
+				// Redireccion a la vista desde donde se dió a editar la lista
 				response.sendRedirect("principal.jsp");
 			} finally {
 			}

@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-import javax.crypto.spec.DHPublicKeySpec;
-
 import com.afd.casette.modelo.Usuario;
 import com.afd.casette.modelo.fachada.Fachada;
 
@@ -13,8 +11,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-
 
 /**
  * Servlet implementation class RegistroServlet
@@ -43,12 +39,12 @@ public class RegistroServlet extends HttpServlet {
 			request.getSession().setAttribute("usuario", usuario);
 			request.getRequestDispatcher("principal.jsp").forward(request, response);
 		} catch (SQLException e) {
-			
+
 			e.printStackTrace();
 			request.setAttribute("error", "Error al registrar");
 			request.getRequestDispatcher("Registro.jsp");
-			
+
 		}
 	}
-	
+
 }

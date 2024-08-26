@@ -14,12 +14,14 @@ public class CerrarSesionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Destruyo la sesión con el método invalidate 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// Destruyo la sesión con el método invalidate
 		request.getSession().invalidate();
-		//Voy a index.jsp
+		// Voy a index.jsp
 		response.sendRedirect("index.jsp");
 	}
 
