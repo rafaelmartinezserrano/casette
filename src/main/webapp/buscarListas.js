@@ -15,22 +15,22 @@ function verListas(listasReproduccion, cancion) {
 		html = html + `<li class="lista" onclick="addCancion(${lista.idLista}, ${cancion});">${lista.nombre}</li>`;
 	}
 	html = html + `</ul>`;
+	document.getElementById("contenedorGlobal").className = "contenedorGlobalDos";
 	let contenedor = document.getElementById("contenedorListas");
 	contenedor.innerHTML = html;
-	contenedor.style.width = "100%";
-	contenedor.style.display = "inline";
+	contenedor.className = "contenedorListasVisible";
 }
 
 function addCancion(idLista, idCancion) {
 	alert(`Añadiendo cancion ${idCancion} a lista ${idLista}`);
 	fetch(`AgregarCancionLista?idCancion=${idCancion}&idLista=${idLista}`)
-	.then(document.getElementById("contenedorListas").style.display = "none");
+	.then(cerrarLista());
 	
 }
 
 function cerrarLista() {
-    document.getElementById("contenedorListas").style.width = "0";
-	document.getElementById("contenedorListas").style.display = "none";
+	document.getElementById("contenedorGlobal").className = "contenedorGlobalUna";
+    document.getElementById("contenedorListas").className = "contenedorListasOculto";
   }
 
 

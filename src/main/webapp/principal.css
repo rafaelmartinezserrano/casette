@@ -254,15 +254,26 @@ audio, .canSpanTitulo {
 	align-items: center;
 }
 
-.contenedorGlobal {
-	display:flex;
-}
-#contenedorListas{
-	width:0;
-	padding:0;
-	display:none !important;
+.contenedorGlobalUna {
+	display:grid;
+	grid-template-columns: 100%;
 }
 
+.contenedorGlobalDos {
+	display:grid;
+	grid-template-columns: 60% 40%;
+}
+
+.contenedorListasOculto{
+	/*width:0;*/
+	padding:0;
+	display:none !important;	
+}
+.contenedorListasVisible{
+	/*width:0;*/
+	padding:0;
+	display:block;	
+}
 
 /* MENSAJES ERROR CLAVE */
 

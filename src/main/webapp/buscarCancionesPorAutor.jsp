@@ -27,7 +27,7 @@
 	<input type="submit" value="¡Busca :)!"/>
 		</div>
 	</main>
-<div class="contenedorGlobal">
+<div class="contenedorGlobalUna" id="contenedorGlobal">
 	<div class="contenedorResultado">
 		<%List <Cancion> canciones = (List <Cancion>)request.getAttribute("listaCanciones");  %>
 			<%if (canciones != null) { %>
@@ -46,7 +46,7 @@
 			<%} %>
 			
 	</div>
-	<div id="contenedorListas"></div>
+	<div id="contenedorListas" class="contenedorListasOculto"></div>
 </div>
 
 
