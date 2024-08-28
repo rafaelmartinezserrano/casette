@@ -131,7 +131,7 @@ legend, label {
 }
 
 
-input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"]{
+input[type="text"], input[type="password"], input[type="email"], input[type="date"], input[type="number"], input[type="search"]{
 	height:35px;
 	width:100%;
 	font-family: "Dosis", sans-serif;
@@ -140,11 +140,12 @@ input[type="text"], input[type="password"], input[type="email"], input[type="dat
 	font-size:1em;
 	border:1px solid white;
 	border-radius: 5px;
+	margin:0.5em auto;
 }
 
 
-input[type="submit"]{
-	margin-top:1em;
+input[type="submit"], input[type="button"]{
+
 	height:35px;
 	border:1px solid white;
 	border-radius: 5px;
@@ -155,12 +156,12 @@ input[type="submit"]{
  	font-style: normal;
 	font-size:1em;
 	font-family: "Kanit", sans-serif;
-	width:30%;
+	width:20%;
 
 }
 
-input[type="submit"]:hover{
-	margin-top:1em;
+input[type="submit"]:hover, input[type="button"]:hover{
+
 	height:35px;
 	border:1px solid rgb(1, 141, 184);
 	color:rgb(1, 141, 184);
@@ -171,13 +172,13 @@ input[type="submit"]:hover{
  	font-style: normal;
 	font-size:1em;
 	font-family: "Kanit", sans-serif;
-	width:30%;
+	width:20%;
 	transition:0.2s ease-in-out;
 
 }
 
-input[type="submit"]:active{
-	margin-top:1em;
+input[type="submit"]:active, input[type="button"]:active{
+
 	height:35px;
 	border:1px solid white;
 	color:white;
@@ -188,7 +189,7 @@ input[type="submit"]:active{
  	font-style: normal;
 	font-size:1em;
 	font-family: "Kanit", sans-serif;
-	width:30%;}
+	width:20%;}
 
 
 /* PÁGINAS DE BÚSQUEDA */
@@ -206,6 +207,13 @@ input[type="submit"]:active{
 	border: 1px solid rgb(1, 141, 184);
 	border-radius: 5px;
 	padding:1em;
+}
+
+.lista {
+	list-style-type: none;
+}
+.lista:hover{
+	background-color: orange;
 }
 
 /* LISTA CANCIONES */
@@ -227,8 +235,8 @@ audio, .canSpanTitulo {
 	border-radius: 5px;
 	margin:0.5em;
 	display:flex;
-	flex-direction: flex-end;
-	justify-content: space-between;
+	padding:0.2em;
+	justify-content: space-evenly;
 	align-items: center;
 	transition:0.2s ease-in-out;
 }
@@ -245,6 +253,16 @@ audio, .canSpanTitulo {
 	justify-content: space-between;
 	align-items: center;
 }
+
+.contenedorGlobal {
+	display:flex;
+}
+#contenedorListas{
+	width:0;
+	padding:0;
+	display:none !important;
+}
+
 
 /* MENSAJES ERROR CLAVE */
 
