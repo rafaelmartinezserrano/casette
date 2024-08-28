@@ -26,6 +26,7 @@ public class CargarListaServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		int idLista = Integer.parseInt(request.getParameter("idLista"));
+		String accion = request.getParameter("accion");
 		Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
 
 		Fachada fachada = new Fachada();
@@ -33,7 +34,11 @@ public class CargarListaServlet extends HttpServlet {
 			try {
 				ListaReproduccion lista = fachada.buscarListaPorId(idLista, usuario);
 				request.setAttribute("listaReproduccion", lista);
-				request.getRequestDispatcher("editarLista.jsp").forward(request, response);
+				if (accion.equals("editar")) {
+					request.getRequestDispatcher("editarLista.jsp").forward(request, response);
+				} else if (accion.equals("reproducir")) {
+					request.getRequestDispatcher("reproducirLista.jsp").forward(request, response);
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 				// request.setAttribute("mensajeErrorConexionLista", "Problemas de conexion");

@@ -11,7 +11,7 @@
 	<body>
 		<% List<ListaReproduccion> listas = (List<ListaReproduccion>)request.getAttribute("listas"); %>
 		<% for (ListaReproduccion lista : listas) { %>
-			<div><%=lista.getNombre() %> <a href="CargarLista?idLista=<%=lista.getIdLista()%>">Editar lista</a> <a href="">Reproducir</a></div>
+			<div><%=lista.getNombre() %> <a href="CargarLista?idLista=<%=lista.getIdLista()%>&accion=editar">Editar lista</a> <a href="CargarLista?idLista=<%=lista.getIdLista()%>&accion=reproducir">Reproducir</a></div>
 		<% } %>
 	</body>
 </html>
