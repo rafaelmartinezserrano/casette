@@ -58,5 +58,5 @@
 				</svg></div>
 			</div>
 			</div>
-			<script src="nav.js"></script>
+			<script src="scripts/nav.js"></script>
 		</nav>

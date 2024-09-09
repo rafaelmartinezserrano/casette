@@ -5,8 +5,6 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.apache.tomcat.util.json.JSONParser;
-
 import com.afd.casette.modelo.ListaReproduccion;
 import com.afd.casette.modelo.Usuario;
 import com.afd.casette.modelo.fachada.Fachada;
